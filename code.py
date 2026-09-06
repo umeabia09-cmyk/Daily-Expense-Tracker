@@ -183,14 +183,14 @@ def main():
                 become=False
                 i = 0
                 while(i<3):
-                    date=input("Enter date (YYYY-MM-DD): ").strip()
+                    date=input("Enter date (DD-MM-YYYY): ").strip()
                     try:
-                        datetime.strptime(date,"%Y-%m-%d")
+                        datetime.strptime(date,"%d-%m-%Y")
                         expence.view_expenses(date)
                         become=True
                         break
                     except ValueError:
-                        print("Invalid date formate. Use(YYYY-MM-DD)")
+                        print("Invalid date formate. Use(DD-MM-YYYY)")
                     i+=1
                 if not become:
                     print("To many attempts".title())
@@ -216,6 +216,7 @@ def main():
             if choice==8:
                 print("thanks for using me\U0001F60A".title())
                 print("Goodbye\U0001F44B")
+                break
         except ValueError:
             print("Invalid Choice.Enter a Number")            
 if __name__=="__main__":
